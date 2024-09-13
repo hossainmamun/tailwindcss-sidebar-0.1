@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tailwind sidebar</title>
+    <!-- bootstrap icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <!-- output css -->
+    <link rel="stylesheet" href="output.css" />
+  </head>
+  <body class="bg-slate-200 w-full min-h-screen relative">
+    <div
+      class="w-12 h-12 border bg-stone-900 flex justify-center items-center rounded-md absolute top-3 left-3 cursor-pointer"
+      onclick="openSidebar()">
+      <i class="bi bi-list text-2xl text-white"></i>
+    </div>
+
+    <aside
+      class="fixed top-0 bottom-0 w-[350px] left-[-350px] xl:left-0 bg-stone-900 text-white duration-500"
+      id="menubar">
+      <div
+        class="flex justify-between items-center py-6 px-6 relative after:block after:bg-stone-700 after:absolute after:w-full after:h-[1px] after:bottom-0 after:left-0 after:right-0">
+        <div class="flex items-center space-x-2">
+          <i class="bi bi-app-indicator text-3xl"></i>
+          <h3 class="text-2xl font-bold">SyntaxMart</h3>
+        </div>
+        <i
+          class="bi bi-x-lg text-xl cursor-pointer lg:hidden"
+          id="toggle-sidebar-btn"
+          onclick="openSidebar()"></i>
+      </div>
+
+      <div
+        class="px-6 py-6 space-y-4 relative after:block after:bg-stone-700 after:absolute after:w-full after:h-[1px] after:bottom-0 after:left-0 after:right-0">
+        <div
+          class="bg-stone-700 py-1.5 px-2.5 rounded-md flex items-center gap-4">
+          <i class="bi bi-search text-xl"></i>
+          <input
+            type="search"
+            name="search"
+            id="search"
+            class="p-2 bg-transparent w-full focus:outline-none placeholder:text-white"
+            placeholder="Search" />
+        </div>
+
+        <div
+          class="hover:bg-stone-700 py-1.5 px-2.5 rounded-md flex items-center gap-4">
+          <i class="bi bi-house text-xl"></i>
+          <a href="#" class="p-2 text-xl w-full capitalize">home</a>
+        </div>
+
+        <div
+          class="hover:bg-stone-700 py-1.5 px-2.5 rounded-md flex items-center gap-4">
+          <i class="bi bi-bookmark text-xl"></i>
+          <a href="#" class="p-2 text-xl w-full capitalize">bookmark</a>
+        </div>
+      </div>
+
+      <!-- dropdown -->
+      <div class="px-6 py-6 space-y-4 relative">
+        <div
+          class="flex justify-between items-center gap-4 py-1.5 px-2.5 rounded-md cursor-pointer"
+          id="dropdown">
+          <div class="flex items-center space-x-2">
+            <i class="bi bi-chat-left text-xl"></i>
+            <a href="#" class="p-2 text-xl w-full capitalize">chatbox</a>
+          </div>
+          <span class="rotate-180" id="arrow-btn">
+            <i class="bi bi-chevron-down"></i>
+          </span>
+        </div>
+
+        <div
+          class="font-semibold capitalize w-4/5 mx-auto flex flex-col gap-1"
+          id="submenu">
+          <a href="#" class="p-2 w-full rounded-md hover:bg-stone-700"
+            >social</a
+          >
+          <a href="#" class="p-2 w-full rounded-md hover:bg-stone-700"
+            >personal</a
+          >
+          <a href="#" class="p-2 w-full rounded-md hover:bg-stone-700"
+            >friends</a
+          >
+        </div>
+      </div>
+
+      <div class="px-6">
+        <div
+          class="hover:bg-stone-700 py-1.5 px-2.5 rounded-md flex items-center gap-4">
+          <i class="bi bi-person text-xl"></i>
+          <a href="#" class="p-2 text-xl w-full capitalize">profile</a>
+        </div>
+      </div>
+
+      <div class="absolute bottom-4 px-6 w-full">
+        <div
+          class="bg-stone-700 py-1.5 px-2.5 rounded-md flex items-center gap-4">
+          <i class="bi bi-box-arrow-left text-xl"></i>
+          <a href="#" class="p-2 text-xl w-full capitalize">logout</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- main content -->
+    <main
+      class="min-h-screen flex flex-col justify-center gap-5 p-8 ml-16 xl:ml-[350px] duration-300"
+      id="main-content">
+      <h1
+        class="text-3xl sm:text-5xl md:text-6xl xl:text-6xl font-extrabold capitalize">
+        tailwindcss sidebar
+      </h1>
+      <h3 class="text-xl font-semibold capitalize">
+        design and developemnt by
+        <a href="https://syntaxmart.com/" class="text-red-600">syntaxmart</a>
+      </h3>
+      <p class="text-lg w-full sm:w-5/6 md:w-4/6 lg:w-3/6">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil harum
+        perspiciatis veritatis dolores accusantium numquam ipsam necessitatibus
+        corporis natus dolor debitis quo est unde sit praesentium saepe quis,
+        sapiente dignissimos.
+      </p>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
